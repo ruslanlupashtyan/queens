@@ -18,11 +18,16 @@ function browsersync() {
   });
 }
 
+function svg() {
+  return src("app/img/**/*.svg").pipe(dest("app/images"));
+}
+
 function convertImageToWEBP() {
   return src([
     "app/img/**/*.png",
     "app/img/**/*.jpg",
     "app/img/**/*.jpeg",
+    "app/img/**/*.JPEG",
     "app/img/**/*.JPG",
   ])
     .pipe(webp())
@@ -59,7 +64,7 @@ function images() {
 function scripts() {
   return src([
     // "node_modules/jquery/dist/jquery.js",
-    "node_modules/bootstrap/dist/js/bootstrap.js", // uncomment only use bootstrap
+    // "node_modules/bootstrap/dist/js/bootstrap.js", // uncomment only use bootstrap
     "app/js/*.js",
     "!app/js/main.min.js",
     "!app/js/axios.js",
@@ -92,7 +97,7 @@ function pugToHTML() {
 
 function styles() {
   return src([
-    "node_modules/bootstrap/scss/bootstrap.scss", // uncomment only use bootstrap
+    // "node_modules/bootstrap/scss/bootstrap.scss", // uncomment only use bootstrap
     "app/scss/style.scss",
   ])
     .pipe(scss({ outputStyle: "compressed" }))
@@ -125,6 +130,7 @@ function watching() {
   watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
   watch(["app/*.html"]).on("change", browserSync.reload);
   watch(["app/**/*.pug"]).on("change", browserSync.reload);
+  watch(["app/**/*.svg"]).on("change", browserSync.reload);
   watch(["app/**/*.pug"], pugToHTML);
 }
 
@@ -134,6 +140,7 @@ exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.pugToHTML = pugToHTML;
 exports.default = parallel(
+  svg,
   styles,
   scripts,
   browsersync,
