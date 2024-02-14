@@ -1,41 +1,40 @@
 h1,
-h2,
-h3 {
-  // font-family: "Cormorant";
+h2 {
+  font-family: "Antiqua";
+  text-transform: uppercase;
+  background: linear-gradient(
+    90deg,
+    #78cbee 0%,
+    #73c3e9 3.53%,
+    #5797cc 25.52%,
+    #4175b6 46.74%,
+    #325ca6 66.74%,
+    #284d9c 85.02%,
+    #254899 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &.large-title {
+    @include font(72, 86, 400);
+  }
+  &.medium-title {
+    @include font(48, 58, 400);
+    margin-bottom: 30px;
+  }
 }
 
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+p {
+  font-family: "Mazzard";
+}
 h4,
 h5,
 h6 {
   // font-family: "Pulse";
-}
-
-h1 {
-  @include media-breakpoint-down(md) {
-  }
-}
-
-h2 {
-  @include media-breakpoint-down(lg) {
-  }
-}
-
-h3 {
-  @include media-breakpoint-down(md) {
-  }
-}
-
-h4 {
-  @include media-breakpoint-down(md) {
-  }
-}
-
-h5 {
-  @include media-breakpoint-down(md) {
-  }
-}
-
-h6 {
-  @include media-breakpoint-down(lg) {
-  }
 }

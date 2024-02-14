@@ -16,8 +16,26 @@
 //   font-weight: 500;
 // }
 
+// book antiqua 400
+// mazzard 500 400 300
+//
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.ttf") format("TrueType");
+  font-family: "Antiqua";
+  src: url("../fonts/BKANT.TTF") format("TrueType");
   font-weight: 400;
+}
+@font-face {
+  font-family: "Mazzard";
+  src: url("../fonts/MAZZARDL-LIGHT.TTF") format("TrueType");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Mazzard";
+  src: url("../fonts/MAZZARDL-REGULAR.TTF") format("TrueType");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Mazzard";
+  src: url("../fonts/MAZZARDL-MEDIUM.TTF") format("TrueType");
+  font-weight: 500;
 }
