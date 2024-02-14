@@ -1,0 +1,14 @@
+.grid {
+  .item {
+    margin: 0 50px 32px;
+  }
+  p {
+    @include font(18, 20, 400);
+    text-align: center;
+  }
+  svg {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
