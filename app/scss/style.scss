@@ -1,4 +1,4 @@
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "components/framework.scss";
 @import "func.scss";
 @import "variables.scss";
 @import "font.scss";
@@ -12,7 +12,8 @@
 // @import "components/select.scss";
 
 //! sections
-@import "sections/calculator.scss";
-
-//! pages
-// @import "pages/sitemap.scss";
+@import "sections/hero.scss";
+@import "sections/grid.scss";
+@import "sections/participans.scss";
+@import "sections/global/header.scss";
+@import "sections/global/footer.scss";
