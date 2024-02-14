@@ -5,32 +5,207 @@
         {
             title: '',
             link: '#'
-        },
-        {
-            title: '',
-            link: '#'
-        },
-        {
-            title: '',
-            link: '#'
-        },
-        {
-            title: '',
-            link: '#'
-        },
-        {
-            title: '',
-            link: '#'
-        },
-        {
-            title: '',
-            link: '#'
         }
+    ];
+    var items = [
+        {
+            image: 'images/IMG_4930.webp',
+            name: 'Олександра Скідан',
+            count: '666',
+            txt: 'Любе пиво і харасментити Сашка на роботі'
+        },
+        {
+            image: 'images/photo_2024-02-12_17-06-35.webp',
+            name: 'Олена Гирич',
+            count: '1488',
+            txt: 'Це найкрасивіша дівчинка в цілім світі'
+        },
+        {
+            image: 'images/photo_2024-02-12_17-08-32.webp',
+            name: 'Яна Танасійчук',
+            count: '228',
+            txt: 'Теж любить харасметити Сашка, а ще пісеньки співає, гроші збирає і пляшки виносить'
+        },
+        {
+            image: 'images/photo_2024-02-13_13-32-20.webp',
+            name: 'Оксана Філіпчук',
+            count: '1044',
+            txt: 'Дуже специфічна дівчинка, може вкрасти вашого коня'
+        },
+        {
+            image: 'images/IMG_5010.webp',
+            name: 'Яна Мельник',
+            count: 'мільярд',
+            txt: 'Начальніца і співзасновниця Мельник Едженсі'
+        },
+        {
+            image: 'images/IMG_7856.webp',
+            name: 'Сашко Цуркан',
+            count: '$*%(^)&_&*+*!!@#$%_^',
+            txt: 'Жертва харасменту тих дорослих тьоток'
+        },
+        {
+            image: 'images/IMG_4930.webp',
+            name: 'Олександра Скідан',
+            count: '666',
+            txt: 'Любе пиво і харасментити Сашка на роботі'
+        },
+        {
+            image: 'images/photo_2024-02-12_17-06-35.webp',
+            name: 'Олена Гирич',
+            count: '1488',
+            txt: 'Це найкрасивіша дівчинка в цілім світі'
+        },
+        {
+            image: 'images/photo_2024-02-12_17-08-32.webp',
+            name: 'Яна Танасійчук',
+            count: '228',
+            txt: 'Теж любить харасметити Сашка, а ще пісеньки співає, гроші збирає і пляшки виносить'
+        },
+        {
+            image: 'images/photo_2024-02-13_13-32-20.webp',
+            name: 'Оксана Філіпчук',
+            count: '1044',
+            txt: 'Дуже специфічна дівчинка, може вкрасти вашого коня'
+        },
+        {
+            image: 'images/IMG_5010.webp',
+            name: 'Яна Мельник',
+            count: 'мільярд',
+            txt: 'Начальніца і співзасновниця Мельник Едженсі'
+        },
+        {
+            image: 'images/IMG_7856.webp',
+            name: 'Сашко Цуркан',
+            count: '$*%(^)&_&*+*!!@#$%_^',
+            txt: 'Жертва харасменту тих дорослих тьоток'
+        },
     ]
 doctype html    
 html(lang="uk")
     include pug/sections/global/head.pug
     body
         include pug/sections/global/header.pug
-        
+        section.section.hero
+            .container
+                h1.large-title.hero__title Charity Queen of Ukraine 2024
+                h3.hero__subtitle Вітаємо Вас на сторінці голосування
+                .hero__txt 
+                    p «Charity Queen of Ukraine» - це всеукраїнський конкурс краси, створений Асоціацією Королев, як потужна платформа для самореалізації та благодійної ініціативи. 
+                .hero__txt 
+                    p Метою конкурса є  популяризації української жіночої вроди, як в Україні, так і за її межами, адже наші переможці є фіналістками світових конкурсів краси. 
+        section.section.grid.container
+            h2.medium-title.grid__title Що дає участь
+            .grid__items.flex-lg.jc-center.wrap
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Новий унікальний 
+                        p досвід
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Набуття або покращення навичок 
+                        p дефіле, позування, мови
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Ідеальне місце для подолання 
+                        p страху публічності
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Відкриття в собі 
+                        p нових талантів
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Подолання комплексів 
+                        p та страхів
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Втілення 
+                        p мрій
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Можливість заявити 
+                        p про себе та свій бізнес
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Особистий 
+                        p розвиток
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Підвищення 
+                        p впізнаваності 
+        section.section.grid.container
+            h2.medium-title.grid__title Переваги конкурсу
+            .grid__items.flex-lg.jc-center.wrap
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Членство в 
+                        p Асоціації Королев
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Доступ до топових 
+                        p проектів та подій країни
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Корисні особисті 
+                        p та бізнес контакти
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Публікації в ЗМі 
+                        p та інтерв’ю
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Можливість потрапити 
+                        p на телебачення 
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Знайомство з зірками 
+                        p та топовими блогерами
+                .item
+                    .item__icon
+                        include images/crown.svg
+                    .item__text 
+                        p Підготовка в команді з 
+                        p фахівцями міжнародного рівня
+        section.section.participants.container
+            h2.large-title.participants__title Наші фіналістки
+            .participants__items.flex.wrap 
+                for item in items
+                    .item
+                        .item__image.image(style=`background-image: url(${item.image})`)
+                        .item__title= item.name
+                        .item__count= item.count
+                        .item__descr= item.txt
+                        button.item__btn Проголосувати
+                
+
         include pug/sections/global/footer.pug
