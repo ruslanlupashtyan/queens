@@ -101,6 +101,8 @@
       }
     }
     .pay {
+      position: absolute;
+      bottom: 10px;
       &__close {
         width: 18px;
         height: 18px;
@@ -117,5 +119,21 @@
         );
       }
     }
+    .count p {
+      margin-right: 5px;
+    }
+    .count,
+    .price {
+      margin-right: 12px;
+    }
+    .count {
+      &__plus,
+      &__minus {
+        cursor: pointer;
+      }
+    }
+    // .price::after {
+    //   content: "₴";
+    // }
   }
 }
