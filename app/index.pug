@@ -17,7 +17,7 @@
         {
             image: 'images/photo_2024-02-12_17-06-35.webp',
             name: 'Олена Гирич',
-            count: '1488',
+            count: '148800000000000000',
             txt: 'Це найкрасивіша дівчинка в цілім світі'
         },
         {
@@ -53,7 +53,7 @@
         {
             image: 'images/photo_2024-02-12_17-06-35.webp',
             name: 'Олена Гирич',
-            count: '1488',
+            count: '1488000000000000',
             txt: 'Це найкрасивіша дівчинка в цілім світі'
         },
         {
@@ -198,14 +198,26 @@ html(lang="uk")
                         p фахівцями міжнародного рівня
         section.section.participants.container
             h2.large-title.participants__title Наші фіналістки
-            .participants__items.flex.wrap 
+            .participants__items.flex.wrap.jc-center
                 for item in items
                     .item
                         .item__image.image(style=`background-image: url(${item.image})`)
                         .item__title= item.name
                         .item__count= item.count
                         .item__descr= item.txt
-                        button.item__btn Проголосувати
+                        .item__pay.pay.flex
+                            .pay__count.count.flex
+                                .count__minus.minus 
+                                    p -
+                                .count__value.value 
+                                    p 100
+                                .count__plus
+                                    p +
+                            .pay__price.price 
+                                p 3000
+                            .pay__close.close.flex.ai-center.jc-center
+                                include images/close.svg
+                        button.item__btn.vote-btn Проголосувати
                 
 
         include pug/sections/global/footer.pug
