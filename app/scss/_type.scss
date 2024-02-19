@@ -17,10 +17,26 @@ h2 {
 
   &.large-title {
     @include font(72, 86, 400);
+    @include max-width(b-md) {
+      @include font(40, 48, 400);
+    }
   }
   &.medium-title {
     @include font(48, 58, 400);
     margin-bottom: 30px;
+    @include max-width(b-md) {
+      @include font(32, 38, 400);
+    }
+  }
+  @include max-width(b-md) {
+    @include font(32, 38, 400);
+  }
+}
+
+h3 {
+  @include font(36, 42, 500);
+  @include max-width(b-md) {
+    @include font(20, 23, 500);
   }
 }
 
@@ -30,6 +46,7 @@ h3 {
   text-align: center;
 }
 
+h3,
 p {
   font-family: "Mazzard";
 }

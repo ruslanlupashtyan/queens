@@ -1,3 +1,6 @@
 .section {
   margin-bottom: 80px;
+  @include max-width(b-md) {
+    margin-bottom: 60px;
+  }
 }

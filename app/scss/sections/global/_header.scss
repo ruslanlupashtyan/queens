@@ -1,6 +1,9 @@
 .header {
   &__logo {
     padding: 20px 0 45px;
+    @include max-width(b-md) {
+      padding: 20px 0 32px;
+    }
   }
   svg {
     margin: 0 auto;
