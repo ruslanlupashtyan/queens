@@ -1,0 +1,43 @@
+.hero {
+  position: relative;
+  &__title {
+    margin: 40px 0 12px;
+    @include max-width(b-md) {
+      margin: 36px 0 8px;
+    }
+  }
+  &__subtitle {
+    margin-bottom: 32px;
+    @include max-width(b-md) {
+      margin-bottom: 8px;
+    }
+  }
+  &__txt p {
+    padding: 0 165px;
+    @include font(24, 28, 300);
+    @include max-width(b-md) {
+      @include font(16, 18, 300);
+      padding: unset;
+    }
+    text-align: center;
+  }
+  &__txt {
+    margin-bottom: 28px;
+    @include max-width(b-md) {
+      margin-bottom: 20px;
+    }
+  }
+  &::before {
+    content: url(~@/assets/images/flowers.svg);
+    // width: 100px;
+    // height: 100px;
+    position: absolute;
+  }
+  &::after {
+    content: url(~@/assets/images/flowers.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(-1, 1);
+  }
+}
