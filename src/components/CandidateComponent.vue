@@ -9,19 +9,22 @@
       </p>
     </div>
     <div class="item__pay pay flex">
-      <div class="pay__count voteCount.value flex">
-        <div class="count__minus minus">
+      <div
+        class="pay__count voteCount.value flex"
+        style="gap: 8px; margin-right: 12px"
+      >
+        <div class="count__minus minus" @click="minus">
           <p>-</p>
         </div>
         <div class="count__value value">
           <p>{{ voteCount }}</p>
         </div>
-        <div class="count__plus plus">
+        <div class="count__plus plus" @click="plus">
           <p>+</p>
         </div>
       </div>
       <div class="pay__price price">
-        <p>{{ price }}</p>
+        <p>{{ total }}</p>
       </div>
       <div class="pay__close close flex ai-center jc-center">
         <svg
@@ -40,27 +43,39 @@
     </div>
     <button class="item__btn vote-btn">
       <p class="vot">Проголосувати</p>
-      <p class="conf" @click="vote">Підтвердити</p>
+      <p class="conf" @click="vote">
+        <span v-if="loading">Підтверджуємо...</span>
+        <span v-else>Підтвердити</span>
+      </p>
     </button>
   </div>
 </template>
 
 <script setup>
 import axios from "axios";
-import { defineProps, onMounted, ref } from "vue";
+import { computed, defineProps, onMounted, ref } from "vue";
 
+const loading = ref(false);
 const props = defineProps(["candidate", "index"]);
 const voteCount = ref(1);
 const price = 30;
+const total = computed(() => voteCount.value * price);
 
 onMounted(() => {
-  var element = document.getElementById("image" + props.candidate.id);
-  if (element) element.style.backgroundImage = props.candidate.imageUrl;
-
   addHandlers();
 });
 
+const plus = () => {
+  if (voteCount.value <= 1000) voteCount.value++;
+};
+
+const minus = () => {
+  if (voteCount.value <= 1) return;
+  voteCount.value--;
+};
+
 const vote = async () => {
+  loading.value = true;
   const data = (
     await axios.post(
       "https://beauty-contest2.azurewebsites.net/api/candidates/vote",
@@ -122,29 +137,79 @@ const addHandlers = () => {
       el.closest(".item").querySelector(".vote-btn").classList.remove("active");
     });
   });
-
-  let items = document.querySelectorAll(".participants .item");
-  items.forEach((el) => {
-    let plus = el.querySelector(".plus");
-    let minus = el.querySelector(".minus");
-
-    plus.addEventListener("click", function () {
-      voteCount.value++;
-      let total = price * voteCount.value;
-      el.querySelector(".value p").innerHTML = voteCount.value;
-      el.querySelector(".price p").innerHTML = total;
-    });
-    minus.addEventListener("click", function () {
-      if (voteCount.value < 2) {
-        return;
-      } else {
-        voteCount.value--;
-        let total = price * voteCount.value;
-        el.querySelector(".value p").innerHTML = voteCount.value;
-        el.querySelector(".price p").innerHTML = total;
-        console.log(voteCount.value);
-      }
-    });
-  });
 };
 </script>
+
+<style lang="scss" scoped>
+$green: #008744;
+$blue: #0057e7;
+$red: #d62d20;
+$yellow: #ffa700;
+$white: #eee;
+
+$width: 100px;
+
+body {
+  background-color: white;
+}
+
+.loader {
+  position: absolute;
+  width: $width;
+  height: $width;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: $width;
+  position: relative;
+  width: $width;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: #b6463a;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes color {
+  100%,
+  0% {
+    stroke: $red;
+  }
+  40% {
+    stroke: $blue;
+  }
+  66% {
+    stroke: $green;
+  }
+  80%,
+  90% {
+    stroke: $yellow;
+  }
+}
+</style>

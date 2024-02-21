@@ -1,7 +1,8 @@
 <template>
   <section class="section participants container">
     <h2 class="large-title participants__title">Наші фіналістки</h2>
-    <div class="participants__items flex wrap jc-center">
+    <div v-if="candidates.length <= 0">Завантаження...</div>
+    <div v-else class="participants__items flex wrap jc-center">
       <CandidateComponent
         v-for="(candidate, i) in candidates"
         :key="candidate.id"
