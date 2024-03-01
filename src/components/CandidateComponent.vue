@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <div class="item flex flex-column">
     <img class="item__image image" :src="candidate.imageUrl" alt="" />
     <div class="item__title">{{ candidate.fullName }}</div>
     <div class="item__count">{{ candidate.voteCount }}</div>
