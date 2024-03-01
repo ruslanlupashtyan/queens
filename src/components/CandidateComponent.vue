@@ -4,9 +4,7 @@
     <div class="item__title">{{ candidate.fullName }}</div>
     <div class="item__count">{{ candidate.voteCount }}</div>
     <div class="item__descr">
-      <p>
-        {{ candidate.description }}
-      </p>
+      <p v-html="candidate.description"></p>
     </div>
     <div class="item__pay pay flex">
       <div
