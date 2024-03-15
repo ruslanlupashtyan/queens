@@ -39,13 +39,13 @@
         </svg>
       </div>
     </div>
-    <button class="item__btn vote-btn">
+    <a :href="candidate.link" target="_blank" class="item__btn vote-btn">
       <p class="vot">Проголосувати</p>
       <p class="conf" @click="vote">
         <span v-if="loading">Підтверджуємо...</span>
         <span v-else>Підтвердити</span>
       </p>
-    </button>
+    </a>
   </div>
 </template>
 
@@ -117,14 +117,14 @@ const vote = async () => {
 const addHandlers = () => {
   let voteButtons = document.querySelectorAll(".participants .vote-btn");
   console.log(voteButtons);
-  voteButtons.forEach((el) => {
-    el.addEventListener("click", function () {
-      voteButtons.forEach((i) => {
-        i.classList.remove("active");
-      });
-      el.classList.add("active");
-    });
-  });
+  // voteButtons.forEach((el) => {
+  //   el.addEventListener("click", function () {
+  //     voteButtons.forEach((i) => {
+  //       i.classList.remove("active");
+  //     });
+  //     el.classList.add("active");
+  //   });
+  // });
 
   let closeButtons = document.querySelectorAll(".participants .close");
   closeButtons.forEach((el) => {
