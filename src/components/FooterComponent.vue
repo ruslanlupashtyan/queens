@@ -111,7 +111,7 @@
         />
       </svg>
     </div>
-    <div class="footer__social">
+    <!-- <div class="footer__social">
       <a href="http://"
         ><svg
           width="30"
@@ -277,7 +277,7 @@
           </defs>
         </svg>
       </a>
-    </div>
+    </div> -->
     <div class="footer__policy">
       <router-link :to="{ name: 'policy' }" target="_blank">
         Публічний договір</router-link
