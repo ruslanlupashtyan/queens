@@ -135,7 +135,7 @@ onMounted(async () => {
       imageUrl: require("../assets/images/queens/14.jpg"),
       fullName: "Марта Николенко",
       description: "Львів",
-      voteCount: 147,
+      voteCount: 188,
       link: "https://send.monobank.ua/jar/45cCS9c51s",
     },
     {
@@ -143,7 +143,7 @@ onMounted(async () => {
       imageUrl: require("../assets/images/queens/17.jpg"),
       fullName: "Єлизавета Тріщанович",
       description: "Миколаїв",
-      voteCount: 524,
+      voteCount: 552,
       link: "https://send.monobank.ua/jar/3VkGKWDKNr",
     },
     {
@@ -159,7 +159,7 @@ onMounted(async () => {
       imageUrl: require("../assets/images/queens/12.jpg"),
       fullName: "Анастасія Грушко",
       description: "Вінниця",
-      voteCount: 0,
+      voteCount: 983,
       link: "https://send.monobank.ua/jar/6zLnTzcoor",
     },
     {
@@ -167,7 +167,7 @@ onMounted(async () => {
       imageUrl: require("../assets/images/queens/16.jpg"),
       fullName: "Яна Мазун",
       description: "Овруч",
-      voteCount: 412,
+      voteCount: 460,
       link: "https://send.monobank.ua/jar/6wXsqkQ77",
     },
     {
@@ -175,7 +175,7 @@ onMounted(async () => {
       imageUrl: require("../assets/images/queens/13.jpg"),
       fullName: "Вікторія Власенко",
       description: "Київ",
-      voteCount: 64,
+      voteCount: 1366,
       link: "https://send.monobank.ua/jar/7oyZqz62TY",
     },
     {
@@ -183,7 +183,7 @@ onMounted(async () => {
       imageUrl: require("../assets/images/queens/18.jpg"),
       fullName: "Ірина Світленко",
       description: "Київ",
-      voteCount: 8,
+      voteCount: 78,
       link: "https://send.monobank.ua/jar/6Z2Yf8D1AR",
     },
     {
